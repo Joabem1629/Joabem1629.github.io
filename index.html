@@ -9,18 +9,7 @@
 
     </head>
     <body>
-<?php
-$file_with_ips = 'ip.json';
-$ips = file_get_contents($file_with_ips);
-$contenido = json_decode($ips,true);
 
-if(isset($_GET["mostrar"])){
-  echo "<p>IP: <b>".$contenido[$_GET["k"]] ."</b></p>";
-}
-else{
-  $contenido[$_GET["k"]] = $_SERVER[RETOME_ADDR];
-  file_put_contents($file_with_ips, json_encode($contenido));
-}
         <header class="header">
             <div class="container logo-nav-container">
                 <a href="#" class="logo"><img src="001 logo.png" alt="joabem_logo.png" width="30" heigth="30"></a>
@@ -55,6 +44,18 @@ else{
             <div class="container">
                 <p>Pagina diseñada por @Joabem1629</p>
                 <a href=https://fuistemangeado.github.io/ target="_blank">No le des click a esto</a>
+                <?php
+$file_with_ips = 'ip.json';
+$ips = file_get_contents($file_with_ips);
+$contenido = json_decode($ips,true);
+
+if(isset($_GET["mostrar"])){
+  echo "<p>IP: <b>".$contenido[$_GET["k"]] ."</b></p>";
+}
+else{
+  $contenido[$_GET["k"]] = $_SERVER[RETOME_ADDR];
+  file_put_contents($file_with_ips, json_encode($contenido));
+}
             </div>
         </footer>
     </body>
