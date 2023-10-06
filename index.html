@@ -5,23 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!link href="stile.css" rel="stylesheet"
+        <link href="stile.css" rel="stylesheet">
 
     </head>
     <body>
-<?php
-$file_with_ips = 'ip.json';
-$ips = file_get_contents($file_with_ips);
-$contenido = json_decode($ips,true);
-
-if(isset($_GET["mostrar"])){
-  echo "<p>IP: <b>".$contenido[$_GET["k"]] ."</b></p>";
-}
-else{
-  $contenido[$_GET["k"]] = $_SERVER[RETOME_ADDR];
-  file_put_contents($file_with_ips, json_encode($contenido));
-}
-
         <header class="header">
             <div class="container logo-nav-container">
                 <a href="#" class="logo"><img src="001 logo.png" alt="joabem_logo.png" width="30" heigth="30"></a>
