@@ -1,76 +1,28 @@
-/* styles.css */
 body {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    padding: 10px 0;
+    background-color: #2a2b2d;
+    color: #c7c7c7;
+    font-family: Arial, sans-serif;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline;
+    margin-right: 15px;
 }
 
 nav ul li a {
-    color: #f0f0f0;
+    color: #78a1bb;
     text-decoration: none;
-    font-weight: bold;
 }
 
-h1, h2 {
-    text-align: center;
+.language-switcher {
+    float: right;
 }
 
-section {
-    padding: 20px;
-}
-
-#suscripcion form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-#suscripcion input, #suscripcion button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-#suscripcion input {
-    flex: 1;
-    max-width: 300px;
-}
-
-#suscripcion button {
-    background-color: #007acc;
-    color: white;
-    cursor: pointer;
-}
-
-#blog-posts {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #262626;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+h1 {
+    color: #78a1bb;
 }
