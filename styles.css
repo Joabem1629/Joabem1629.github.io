@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal */
 }
 
 header {
@@ -24,6 +25,7 @@ header {
     z-index: 1000;
     top: 0;
     left: 0;
+    background: none; /* Sin fondo para el header */
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -53,19 +55,31 @@ nav ul li a:hover {
 
 .hero {
     background: url('https://preview.redd.it/hokusai-the-great-wave-off-kanagawa-reimagined-with-v0-35gypactn9ka1.png?width=2880&format=png&auto=webp&s=d27e2b23576e24acb2efa40b4b5de54337a9f3da') no-repeat center center/cover;
-    height: 100vh; /* Aumenta la altura para que cubra toda la pantalla */
+    height: 100vh; /* La imagen de fondo cubre toda la pantalla */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 60px;
+    background-attachment: fixed; /* El fondo se queda fijo */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color negro con baja opacidad encima de la imagen */
+    z-index: 1;
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad para mejor legibilidad */
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima del overlay */
     padding: 20px;
-    border-radius: 10px;
+    text-align: center;
 }
 
 .hero h2 {
@@ -98,10 +112,12 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    background-color: rgba(18, 18, 18, 0.8); /* Fondo más oscuro con mayor opacidad */
+    backdrop-filter: blur(5px); /* Desenfoque para mejorar la legibilidad */
 }
 
 .card {
-    background-color: #1f1f1f;
+    background-color: rgba(31, 31, 31, 0.8); /* Ajuste para que combine con el nuevo fondo */
     padding: 20px;
     border-radius: 10px;
     width: 35%; /* Reduce el ancho de las tarjetas */
