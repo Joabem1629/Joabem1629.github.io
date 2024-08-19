@@ -1,0 +1,49 @@
+.content {
+    padding: 20px;
+    background-color: rgba(18, 18, 18, 0.8);
+    text-align: center;
+}
+
+.post-box {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.post-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.post-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.post-box .button {
+    padding: 10px 20px;
+    background-color: #f8443f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.post-box .button:hover {
+    background-color: #3e93e2;
+}
+
+.post-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
