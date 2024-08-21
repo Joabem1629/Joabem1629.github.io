@@ -1,152 +1,152 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+:root {
+    --oxford-blue: #000028ff;
+    --eerie-black: #212121ff;
+    --vermilion: #f44336ff;
+    --burnt-umber: #8b2d2dff;
 }
 
 body {
-    background-color: #121212;
-    color: #fff;
-    line-height: 1.6;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--eerie-black);
+    color: white;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* Asegura que no haya scroll horizontal */
 }
 
 header {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
     width: 100%;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background: none; /* Sin fondo para el header */
-    transition: background-color 0.3s ease-in-out;
+    overflow: hidden; /* Evita que la imagen se desborde */
 }
 
-header.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo del header al hacer scroll */
+#header-image {
+    width: 100%;
+    height: 30vh; /* La imagen ocupará el 50% de la altura de la ventana */
+    object-fit: cover; /* Cubre el área del contenedor */
+    object-position: center 35%; /* Ajusta la parte visible de la imagen */
+    display: block;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+nav {
+    background-color: var(--eerie-black);
+    padding: 20px 0; /* Mayor espacio arriba y abajo del menú */
+    margin-top: 20px; /* Separación entre la imagen y el menú */
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #bdbdbd;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f8443f;
-}
-
-.hero {
-    background: url('https://preview.redd.it/hokusai-the-great-wave-off-kanagawa-reimagined-with-v0-35gypactn9ka1.png?width=2880&format=png&auto=webp&s=d27e2b23576e24acb2efa40b4b5de54337a9f3da') no-repeat center center/cover;
-    height: 100vh; /* La imagen de fondo cubre toda la pantalla */
-    position: relative;
+.link-list {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-attachment: fixed; /* El fondo se queda fijo */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los botones se agrupen verticalmente si es necesario */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Color negro con baja opacidad encima de la imagen */
-    z-index: 1;
+.link-list li {
+    margin: 5px 0; /* Espacio entre los botones en la vista vertical */
 }
 
-.overlay {
-    position: relative;
-    z-index: 2; /* Asegura que el texto esté por encima del overlay */
-    padding: 20px;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 98px;
-    margin-bottom: 10px;
-    color: #f8443f;
-    background: none; /* Sin fondo */
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    background: none; /* Sin fondo */
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #f8443f;
-    color: #fff;
+.link-list li a {
+    color: white;
     text-decoration: none;
+    padding: 10px;
+    border: 2px solid white;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: bold;
 }
 
-.button:hover {
-    background-color: #3e93e2;
+.link-list li a:hover {
+    color: var(--burnt-umber);
+    border-color: var(--burnt-umber);
 }
 
-.content {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: rgba(18, 18, 18, 0.8); /* Fondo más oscuro con mayor opacidad */
-    backdrop-filter: blur(5px); /* Desenfoque para mejorar la legibilidad */
+#content {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.card {
-    background-color: rgba(31, 31, 31, 0.8); /* Ajuste para que combine con el nuevo fondo */
-    padding: 20px;
-    border-radius: 10px;
-    width: 35%; /* Reduce el ancho de las tarjetas */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    background: none; /* Sin fondo */
-}
-
-.card p {
+#content h1 {
+    font-size: 3em;
     margin-bottom: 20px;
-    background: none; /* Sin fondo */
+    color: var(--vermilion);
 }
 
-.card j {
-    color: #f8443f;
+#content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
 }
 
 footer {
-    background-color: #1f1f1f;
+    background-color: var(--oxford-blue);
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
     margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.language-selector {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.language-selector span {
+    margin-left: 5px;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    background-color: var(--oxford-blue);
+    bottom: 25px; /* Despliega hacia arriba */
+    left: 0;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.language-options button {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.language-options button:hover {
+    color: var(--burnt-umber);
+}
+
+/* Media Query para ajuste de botones en pantallas pequeñas */
+@media (max-width: 768px) {
+    .link-list {
+        flex-direction: column; /* Los botones se agrupan verticalmente */
+        align-items: center; /* Centrados horizontalmente */
+    }
+
+    .link-list li {
+        margin: 10px 0; /* Mayor espacio entre botones en vista vertical */
+    }
 }
