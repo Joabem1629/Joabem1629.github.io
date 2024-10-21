@@ -1,49 +1,82 @@
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, sans-serif;
     color: #333;
-    font-size: 1.2rem;
-    line-height: 1.6em;
     margin: 0;
-    margin-top: 15rem;
+    padding: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1.3em;
-    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-h2 {
-    font-size: 2rem;
-    line-height: 1.3em;
-}
-
-p {
-    margin-bottom: 1.6em;
-}
-
-p.precio {
-    font-size: 1.5rem;
-    font-weight: bold;
-
-}
-
-header{
-    background: #333;
-    color: white;
+.menu {
+    width: 80%;
+    max-width: 900px;
+    margin: 10rem auto 4rem; /* Ajusta el margen superior e inferior según sea necesario */
     padding: 2rem 0;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
+    box-sizing: border-box;
 }
-    .header a{
-        color: white;
-        text-decoration: none;
-    }
-main {
-        width: 85%;
-        max-width: 850px;
-        margin: auto;
-    }
+
+footer {
+    background-color: #ddd;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem; /* Ajusta el margen inferior del pie de página */
+    text-size-adjust: 5;
+}
+
+.category {
+    margin-bottom: 3rem;
+}
+
+.category h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    text-decoration: underline;
+}
+
+.category h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+/* 
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #cc3333;
+}
+
+.subtext {
+    font-size: 1.4rem;
+    text-decoration: none;
+} */
+
+.image {
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    
+}
