@@ -31,6 +31,12 @@ h1 {
     box-sizing: border-box;
 }
 
+.image {
+max-width: 300px;
+height: auto;
+margin-top: 20px;
+}
+
 footer {
     background-color: #ddd;
     text-align: center;
@@ -74,8 +80,3 @@ footer {
     text-decoration: none;
 }
 
-.image {
-max-width: 300px;
-height: auto;
-margin-top: 20px;
-}
