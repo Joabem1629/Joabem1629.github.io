@@ -73,3 +73,9 @@ footer {
     font-size: 1.4rem;
     text-decoration: none;
 }
+
+.image {
+max-width: 300px;
+height: auto;
+margin-top: 20px;
+}
