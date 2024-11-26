@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LOS SUMOTORI Y EL CHANKO NABE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14a49468-5efb-802d-809e-e5fc5833c631" class="page sans"><header><img class="page-cover-image" src="https://dannwoellertthefoodetymologist.wordpress.com/wp-content/uploads/2017/01/sumo-eating.jpg" style="object-position:center 20.97%"/><h1 class="page-title">LOS SUMOTORI Y EL CHANKO NABE</h1><p class="page-description"></p></header><div class="page-body"><h1 id="14a49468-5efb-802a-a344-e93f09150ed7" class=""><strong>1. Cultura y sociedad</strong></h1><div id="14a49468-5efb-809e-85b7-f4168cff0c18" class="column-list"><div id="14a49468-5efb-805c-9b73-e8870d168594" style="width:43.75%" class="column"><h2 id="14a49468-5efb-8047-b96e-ecb03831e244" class=""><strong>Japón en general</strong></h2><p id="14a49468-5efb-8012-bf89-f63dcd00e943" class="">La sociedad japonesa valora profundamente la armonía, el respeto por las tradiciones y el vínculo entre las personas y la naturaleza. La gastronomía es un reflejo de estas cualidades, con énfasis en ingredientes frescos, estacionales y locales, presentados con estética y simplicidad.</p><p id="14a49468-5efb-80fc-95d0-de90d1247b10" class="">En la vida diaria, las comidas son momentos para compartir en familia o entre amigos, y reflejan un sentido de comunidad. Este enfoque se ve incluso en platos cotidianos como el miso shiru o el bentō, que combinan cuidado, equilibrio y nutrición.</p></div><div id="14a49468-5efb-80df-bd65-c48588f1b94c" style="width:56.25%" class="column"><figure id="14a49468-5efb-80c1-8b00-db8790d0bf50" class="image"><a href="007762d2-7c5a-4061-ac41-1968e18c56c6.png"><img style="width:288px" src="007762d2-7c5a-4061-ac41-1968e18c56c6.png"/></a></figure></div></div><div id="14a49468-5efb-80ef-aa17-f2d8e9886efd" class="column-list"><div id="14a49468-5efb-80b8-b3ec-c2d2412b953a" style="width:43.75%" class="column"><figure id="14a49468-5efb-804d-91ff-f5310e299d31" class="image"><a href="99782a5e-f6b9-4b17-be65-dd99983a830b.png"><img style="width:288px" src="99782a5e-f6b9-4b17-be65-dd99983a830b.png"/></a></figure></div><div id="14a49468-5efb-80e2-84a3-c157277d7d7e" style="width:56.25%" class="column"><h2 id="14a49468-5efb-8035-b773-c8b763f5afa0" class=""><strong>Sumo y chanko nabe</strong></h2><p id="14a49468-5efb-80ee-9e5a-fa360815d51a" class="">Por otro lado, el sumo, como práctica cultural específica, sigue una rutina rígida y disciplinada que influye directamente en la alimentación. Los sumotori consumen el chanko nabe no solo como una necesidad alimenticia, sino como un ritual colectivo que refuerza el espíritu de camaradería y jerarquía dentro de las heya.</p><p id="14a49468-5efb-8007-860d-c4d7ebc8da57" class="">En este contexto, la comida trasciende su función práctica para convertirse en una herramienta de construcción de fortaleza física y un vínculo simbólico con la tradición del sumo, un deporte que es también un acto espiritual.</p></div></div><h1 id="14a49468-5efb-8015-a186-c17fee45e409" class=""><strong>2. Hábitos y prácticas</strong></h1><div id="14a49468-5efb-80ad-8e26-fe9a77d6cf85" class="column-list"><div id="14a49468-5efb-8097-ad21-d64b41d55620" style="width:50%" class="column"><h2 id="14a49468-5efb-80c2-85a9-c37f235aa8d9" class=""><strong>Japón en general</strong></h2></div><div id="14a49468-5efb-805f-9096-d73aa1cf6ac6" style="width:50%" class="column"><h2 id="14a49468-5efb-8089-a381-fb0d784987d8" class=""><strong>Sumo y chanko nabe</strong></h2></div></div><div id="14a49468-5efb-8099-bfd7-f0902ed72c01" class="column-list"><div id="14a49468-5efb-8029-8daa-d3abee2ba327" style="width:25%" class="column"><p id="14a49468-5efb-80c2-a830-f99dca770ad9" class="">En la vida cotidiana, los japoneses siguen hábitos alimenticios que priorizan la moderación y el equilibrio. Las porciones suelen ser pequeñas, los platos están diseñados para resaltar la frescura y naturalidad de los ingredientes, y las comidas tienden a incluir arroz, vegetales, pescado y sopa de miso. Además, los horarios de comida son regulares, con énfasis en un desayuno nutritivo y una cena ligera.</p><p id="14a49468-5efb-80b3-84b2-ea2e40ac7e11" class="">El consumo de alimentos está asociado con prácticas de etiqueta, como decir <em>itadakimasu</em> antes de comer, y evitar acciones consideradas groseras, como hablar con la boca llena o clavar los palillos en el arroz.</p></div><div id="14a49468-5efb-80a6-803e-c8f548d6bc38" style="width:25%" class="column"><figure id="14a49468-5efb-8036-9867-e03b4a4eedf5" class="image"><a href="1000114949.jpg"><img src="1000114949.jpg"/></a></figure></div><div id="14a49468-5efb-80ca-b671-ce4b7b754876" style="width:25%" class="column"><p id="14a49468-5efb-808d-97cf-d49c317ebdb7" class="">En contraste, los hábitos de los sumotori están diseñados para maximizar la ingesta calórica y el aumento de peso, esenciales para el desempeño en el ring. La rutina diaria incluye un desayuno ligero o nulo, seguido de horas de entrenamiento físico intenso y un almuerzo masivo centrado en el chanko nabe.</p><p id="14a49468-5efb-80fc-a138-ca679ab1bc6a" class="">Este plato se prepara en grandes ollas al centro de la mesa y se acompaña de grandes cantidades de arroz blanco y cerveza. Después de comer, los sumotori toman una siesta para favorecer la ganancia de peso, un hábito que contrasta significativamente con el enfoque tradicional japonés de la moderación.</p></div><div id="14a49468-5efb-80ee-aa4a-d76ea1bb36a2" style="width:25%" class="column"><figure id="14a49468-5efb-8024-8cbd-f935779564f9" class="image"><a href="1000114946.jpg"><img style="width:364.0000305175781px" src="1000114946.jpg"/></a></figure></div></div><h1 id="14a49468-5efb-80b2-a371-f466a4ba0819" class=""><strong>3. Filosofía y antropología</strong></h1><figure id="14a49468-5efb-802f-b33f-d99372226c6d" class="image"><a href="1000114950.jpg"><img style="width:100%" src="1000114950.jpg"/></a></figure><div id="14a49468-5efb-8046-aedb-c95d0c6978e7" class="column-list"><div id="14a49468-5efb-80f2-a307-d9a324082159" style="width:50%" class="column"><h2 id="14a49468-5efb-807c-9eff-cf531c634837" class=""><strong>Japón en general</strong></h2><p id="14a49468-5efb-8082-952b-dd208e6a8204" class="">El gusto, por ejemplo, está moldeado por el umami, un concepto central en la cocina japonesa. La alimentación diaria también enfatiza la salud y el bienestar, reflejando un equilibrio entre necesidad y placer.</p><p id="14a49468-5efb-806b-997a-ccd06e565c59" class="">La filosofía gastronómica japonesa se basa en la apreciación del sabor natural de los ingredientes, la armonía entre los elementos del plato y la conexión con las estaciones del año. La estética minimalista de los platos refleja una creencia subyacente en que la belleza y la simplicidad son inseparables.</p></div><div id="14a49468-5efb-80a7-b57c-cb0dcbfd274e" style="width:50%" class="column"><h2 id="14a49468-5efb-8074-9b5f-cae9e8b42fe7" class=""><strong>Sumo y chanko nabe</strong></h2><p id="14a49468-5efb-80a1-bfb4-d6596d916728" class="">En el caso de los sumotori, las creencias asociadas al chanko nabe son diferentes, enfocadas en la fuerza, la disciplina y la jerarquía. El plato se considera un símbolo de poder y unión dentro de las heya.</p><p id="14a49468-5efb-80cc-8f1e-e508a32cf1ee" class="">La dieta de los sumotori responde a una necesidad específica: aumentar masa corporal para tener una ventaja competitiva en el dohyo (ring de sumo). Aunque el chanko nabe puede incluir una variedad de ingredientes, el pollo es considerado esencial, ya que representa estabilidad (los luchadores buscan &quot;pararse firmes&quot; como un pollo, que nunca cae de espaldas).</p></div></div><h1 id="14a49468-5efb-805c-9910-cde413d38784" class=""><strong>4. Comunicación</strong></h1><div id="14a49468-5efb-8049-a016-e89a3e36b31b" class="column-list"><div id="14a49468-5efb-8077-b167-ca69b044cc51" style="width:28.125%" class="column"><figure id="14a49468-5efb-805a-9b95-c2303c0c07d7" class="image"><a href="8d30fff7-3488-4fa2-8426-ef5071ab670f.png"><img style="width:288px" src="8d30fff7-3488-4fa2-8426-ef5071ab670f.png"/></a></figure></div><div id="14a49468-5efb-8096-88fd-e98fad1ef299" style="width:21.875%" class="column"><h2 id="14a49468-5efb-804f-b414-e2677fd2aaf3" class=""><strong>Japón en general</strong></h2><p id="14a49468-5efb-807e-a3e3-c0a249ec65f4" class="">La gastronomía japonesa comunica valores culturales como el respeto por la naturaleza, la dedicación a la artesanía y la importancia de la comunidad. Platos como el sushi, el ramen o el wagashi (dulces tradicionales) se utilizan como embajadores de la identidad cultural japonesa en el extranjero.</p><p id="14a49468-5efb-804f-9cf8-d14f26c0f2e2" class="">En el ámbito doméstico, la comida es un medio para transmitir amor y cuidado, especialmente en el caso de los bentō preparados con esmero para los niños o los trabajadores.</p></div><div id="14a49468-5efb-8022-b653-f6182039bc1e" style="width:28.125%" class="column"><figure id="14a49468-5efb-807a-bb3d-ff0beb521e37" class="image"><a href="image.png"><img style="width:192px" src="image.png"/></a></figure></div><div id="14a49468-5efb-8080-b114-dd6fe64519f6" style="width:21.87500000000001%" class="column"><h2 id="14a49468-5efb-80ca-84b8-d9420f002e74" class=""><strong>Sumo y chanko nabe</strong></h2><p id="14a49468-5efb-803f-9156-ff7c1ac114c5" class="">Dentro del mundo del sumo, el chanko nabe actúa como una herramienta de comunicación jerárquica y comunitaria. Los luchadores más jóvenes suelen encargarse de su preparación, un acto que simboliza respeto hacia sus superiores y refuerza la estructura jerárquica de las heya.</p><p id="14a49468-5efb-8012-94fe-e7db24989b95" class="">En un contexto más amplio, el chanko nabe también comunica la fortaleza y la disciplina asociadas al sumo, atrayendo turistas que desean experimentar este aspecto único de la cultura japonesa.</p></div></div><h1 id="14a49468-5efb-80e0-b891-f863602635c9" class=""><strong>Conclusión general</strong></h1><figure id="14a49468-5efb-80df-baf3-d732575efd51" class="image"><a href="1000114953.jpg"><img style="width:100%" src="1000114953.jpg"/></a></figure><p id="14a49468-5efb-8073-86cc-c2fe07b4539c" class="">El análisis del chanko nabe permite explorar las diferencias entre los hábitos alimenticios cotidianos en Japón y las prácticas únicas de los sumotori. Ambos contextos revelan cómo la gastronomía no solo satisface necesidades físicas, sino que también actúa como un reflejo de los valores culturales y sociales. Mientras la sociedad japonesa en general enfatiza la moderación y el equilibrio, el mundo del sumo celebra la fuerza, la jerarquía y la camaradería a través del chanko nabe.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
